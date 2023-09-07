@@ -1,0 +1,18 @@
+config {
+  pageTitleFirst = 1
+  pageTitleSeparator = |
+  pageTitleSeparator.noTrimWrap = | | |
+
+  spamProtectEmailAddresses = 1
+  spamProtectEmailAddresses_atSubst = (at)
+
+  compressCss = 1
+  concatenateCss = 1
+  compressJs = 1
+  concatenateJs = 1
+
+  #InlineJS as file
+  removeDefaultJS = external
+
+  admPanel = 1
+}

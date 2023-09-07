@@ -1,0 +1,24 @@
+######################
+#### DEPENDENCIES ####
+######################
+@import 'EXT:seo/Configuration/TypoScript/XmlSitemap/setup.typoscript'
+@import 'EXT:fluid_styled_content/Configuration/TypoScript/setup.typoscript'
+@import 'EXT:go_maps_ext/Configuration/TypoScript/setup.typoscript'
+@import 'EXT:powermail/Configuration/TypoScript/Main/setup.typoscript'
+@import 'EXT:powermail/Configuration/TypoScript/BootstrapClassesAndLayout/setup.typoscript'
+@import 'EXT:news/Configuration/TypoScript/setup.typoscript'
+@import 'EXT:news/Configuration/TypoScript/Sitemap/setup.typoscript'
+@import 'EXT:tt_address/Configuration/TypoScript/setup.typoscript'
+
+# TODO: is this the right place?!
+# typo3_encore settings override
+# https://github.com/sabbelasichon/typo3_encore
+@import 'EXT:typo3_encore/Configuration/TypoScript/setup.typoscript'
+# eo typo3_encore
+
+#Gugler EXT:
+@import 'EXT:gugler_cookies/Configuration/TypoScript/setup.typoscript'
+@import 'EXT:gugler_theme/Configuration/TypoScript/Library/'
+
+#Console.log disabling for production
+@import 'EXT:gugler_theme/Configuration/TypoScript/Development/setup.typoscript'

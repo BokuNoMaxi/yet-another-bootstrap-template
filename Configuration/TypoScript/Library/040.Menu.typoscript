@@ -1,0 +1,138 @@
+page = PAGE
+page {
+  10 = FLUIDTEMPLATE
+  10 {
+    dataProcessing {
+      # main menu of website
+      10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+      10 {
+        special = directory
+        special.value = {$guglertheme.menu.main}
+        levels = 5
+        as = mainmenu
+
+      }
+      20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+      20 {
+        special = directory
+        special.value = {$guglertheme.menu.meta}
+        levels = 1
+        as = metamenu
+      }
+      40 = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor
+      40 {
+        as = languagenavigation
+      }
+      100 = TYPO3\CMS\Frontend\DataProcessing\SiteProcessor
+      100 {
+        as = site
+      }
+    }
+  }
+}
+
+lib.navigation_breadcrumb = COA
+lib.navigation_breadcrumb {
+  stdWrap.wrap (
+    <ol class="breadcrumb">|</ol>
+  )
+
+  10 = HMENU
+  10 {
+    special = rootline
+    1 = TMENU
+    1 {
+      target = _top
+      noBlur = 1
+      NO = 1
+      NO {
+        wrapItemAndSub = <li class="breadcrumb-item">|</li>
+        stdWrap.htmlSpecialChars = 1
+      }
+      CUR < .NO
+      CUR {
+        wrapItemAndSub = <li class="breadcrumb-item active">|</li>
+        doNotLinkIt = 0
+        ATagParams = aria-current="page"
+      }
+    }
+  }
+  #News-Detailview
+  15 = COA
+  15 {
+    if.isTrue.data = GP:tx_news_pi1|news
+    stdWrap.wrap = <li class="breadcrumb-item active" >|</li>
+    5 = TEXT
+    5 {
+      stdWrap.dataWrap = <a href="|" aria-current="page" target="_top" itemprop="item">
+      data = getIndpEnv:TYPO3_REQUEST_URL
+    }
+    10 = RECORDS
+    10 {
+      dontCheckPid = 1
+      tables = tx_news_domain_model_news
+      source {
+        data = GP:tx_news_pi1|news
+        intval = 1
+      }
+      conf.tx_news_domain_model_news = TEXT
+      conf.tx_news_domain_model_news {
+        field = title
+        htmlSpecialChars = 1
+      }
+      stdWrap.dataWrap = |</a>
+    }
+  }
+  #News-Listview-Categories
+  20 = COA
+  20 {
+    if.isTrue.data = GP:tx_news_pi1|overwriteDemand|categories
+    stdWrap.wrap = <li class="breadcrumb-item active">|</li>
+    5 = TEXT
+    5 {
+      stdWrap.dataWrap = <a href="|" target="_top" itemprop="item" aria-current="page">
+      data = getIndpEnv:TYPO3_REQUEST_URL
+    }
+    10 = RECORDS
+    10 {
+      dontCheckPid = 1
+      tables = sys_category
+      source {
+        data = GP:tx_news_pi1|overwriteDemand|categories
+        intval = 0
+      }
+      conf.sys_category = TEXT
+      conf.sys_category {
+        field = title
+        htmlSpecialChars = 1
+      }
+      stdWrap.dataWrap = |</a>
+    }
+  }
+  #News-Listview-Tags
+  25 = COA
+  25 {
+    if.isTrue.data = GP:tx_news_pi1|overwriteDemand|tags
+    stdWrap.wrap = <li class="breadcrumb-item active">|</li>
+    5 = TEXT
+    5 {
+      stdWrap.dataWrap = <a href="|" target="_top" itemprop="item" aria-current="page">
+      data = getIndpEnv:TYPO3_REQUEST_URL
+    }
+    10 = RECORDS
+    10 {
+      dontCheckPid = 1
+      tables = tx_news_domain_model_tag
+      source {
+        data = GP:tx_news_pi1|overwriteDemand|tags
+        intval = 0
+      }
+      conf.tx_news_domain_model_tag = TEXT
+      conf.tx_news_domain_model_tag {
+        field = title
+        htmlSpecialChars = 1
+      }
+      stdWrap.dataWrap = |</a>
+    }
+  }
+}

@@ -1,0 +1,44 @@
+######################################
+#### BACKENDLAYOUT: SPECIAL START ####
+######################################
+mod {
+  web_layout {
+    BackendLayouts {
+      simple {
+        title = Simple Page
+        config {
+          backend_layout {
+            colCount = 3
+            rowCount = 2
+            rows {
+              1 {
+                columns {
+                  1 {
+                    name = Header
+                    colspan = 2
+                    colPos = 10
+                  }
+                  2 {
+                    name = CTA
+                    colspan = 1
+                    colPOS = 11
+                  }
+                }
+              }
+              2 {
+                columns {
+                  1 {
+                    name = Content
+                    colspan = 3
+                    colPos = 0
+                  }
+                }
+              }
+
+            }
+          }
+        }
+      }
+    }
+  }
+}
