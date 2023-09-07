@@ -24,13 +24,13 @@ page {
 
     }
     layoutRootPaths {
-      0 = EXT:yabt/Resources/Private/Layouts/Page
+      0 = EXT:yet_another_bootstrap_template/Resources/Private/Layouts/Page
     }
     templateRootPaths {
-      0 = EXT:yabt/Resources/Private/Templates/Page
+      0 = EXT:yet_another_bootstrap_template/Resources/Private/Templates/Page
     }
     partialRootPaths {
-      0 = EXT:yabt/Resources/Private/Partials/Page
+      0 = EXT:yet_another_bootstrap_template/Resources/Private/Partials/Page
     }
     variables {
       pageLayout = TEXT

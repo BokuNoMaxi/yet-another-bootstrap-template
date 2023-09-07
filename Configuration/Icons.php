@@ -5,6 +5,6 @@ return [
     // Icon provider class
     "provider" => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
     // The source SVG for the SvgIconProvider
-    "source" => "EXT:yabt/Resources/Public/Icons/Extension.svg",
+    "source" => "EXT:yet_another_bootstrap_template/Resources/Public/Icons/Extension.svg",
   ],
 ];

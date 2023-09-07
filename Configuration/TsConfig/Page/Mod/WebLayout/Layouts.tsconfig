@@ -1,2 +1,2 @@
 # BACKENDLAYOUTS
-@import 'EXT:yabt/Configuration/TsConfig/Page/Mod/WebLayout/BackendLayouts/*.tsconfig'
+@import 'EXT:yet_another_bootstrap_template/Configuration/TsConfig/Page/Mod/WebLayout/BackendLayouts/*.tsconfig'
