@@ -6,25 +6,19 @@ page {
       # main menu of website
       10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
       10 {
-        special = directory
-        special.value = {$guglertheme.menu.main}
-        levels = 5
+        expandAll = 1
+        includeSpacer = 1
+        levels = 2
         as = mainmenu
 
       }
-      20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
-      20 {
-        special = directory
-        special.value = {$guglertheme.menu.meta}
-        levels = 1
-        as = metamenu
-      }
-      40 = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor
-      40 {
+      
+      100 = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor
+      100 {
         as = languagenavigation
       }
-      100 = TYPO3\CMS\Frontend\DataProcessing\SiteProcessor
-      100 {
+      110 = TYPO3\CMS\Frontend\DataProcessing\SiteProcessor
+      110 {
         as = site
       }
     }

@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+        <f:link.page class="navbar-brand" pageUid="{site.configuration.rootPageId}">{site.configuration.websiteTitle}</f:link.page>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <f:for each="{menu}" as="menuitem" iteration="i">
+                    <f:if condition="{menuitem.children}">
+                        <f:then>
+                            <f:render section="menuitem-dropdown" arguments="{menuitem:menuitem}" />
+                        </f:then>
+                        <f:else>
+                            <f:render section="menuitem-single" arguments="{menuitem:menuitem}" />
+                        </f:else>
+                    </f:if>
+                </f:for>
+            </ul>
+            
+            <form class="d-flex m-0" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+  </nav>
+
+<f:section name="menuitem-single">
+    <li class="nav-item">
+        <a  class="nav-link {f:if(condition: '{menuitem.acitve}', then: 'active')}" 
+            href="{menuitem.link}"
+            {f:if(condition: '{menuitem.acitve}', then: 'aria-current="page"')}
+            >{menuitem.title}</a>
+    </li>
+</f:section>
+<f:section name="menuitem-dropdown">
+    <li class="nav-item">
+        <a  class="nav-link pe-0 {f:if(condition: '{menuitem.acitve}', then: 'active')}" 
+            href="{menuitem.link}"
+            {f:if(condition: '{menuitem.acitve}', then: 'aria-current="page"')}
+            >{menuitem.title}</a>
+        
+    </li>
+    <li class="nav-item dropdown">
+        <a  class="nav-link dropdown-toggle" 
+            href="#" 
+            role="button" 
+            data-bs-toggle="dropdown" 
+            aria-expanded="false">&#8205;</a>
+        <ul class="dropdown-menu">
+            <f:for each="{menuitem.children}" as="subitem" iteration="i">
+                <li>
+                    <a class="dropdown-item" href="{subitem.link}">{subitem.title}</a>
+                </li>
+            </f:for>
+        </ul>
+    </li>
+</f:section>

@@ -1,0 +1,11 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+  <f:spaceless>
+    <header class="sticky-top">
+      <f:render partial="Header/Navigation/Default" arguments="{site:site, menu:mainmenu}"/>
+    </header>
+    <!--TYPO3SEARCH_begin-->
+    <f:render section="Main" />
+    <!--TYPO3SEARCH_end-->
+    <f:render partial="Footer/Navigation/Default"/>
+  </f:spaceless>
+</html>
