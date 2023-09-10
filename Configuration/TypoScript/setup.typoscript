@@ -1,4 +1,5 @@
 @import 'EXT:yet_another_bootstrap_template/Configuration/TypoScript/Library/'
+@import 'EXT:yet_another_bootstrap_template/Configuration/TypoScript/ContentElement/'
 
 lib.contentElement {
     layoutRootPaths.10 = EXT:yet_another_bootstrap_template/Resources/Private/Layouts/ContentElement

@@ -1,0 +1,18 @@
+####################################
+#### NEW CONTENT ELEMENT WIZARD ####
+####################################
+mod.wizards.newContentElement.wizardItems {
+  common {
+    elements {
+        carousel {
+            iconIdentifier = carousel
+            title = LLL:EXT:yet_another_bootstrap_template/Resources/Private/Language/Backend.xlf:content_element.carousel
+            description = LLL:EXT:yet_another_bootstrap_template/Resources/Private/Language/Backend.xlf:content_element.carousel.description
+            tt_content_defValues {
+                CType = carousel
+            }
+        }
+    }
+    show := addToList(carousel)
+  }
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2023-09-06T17:27:39Z" product-name="yet_another_bootstrap_template">
+		<header>
+			<authorName>Markus Ketterer</authorName>
+			<authorEmail>4tmestorage@gmail.com</authorEmail>
+		</header>
+		<body>
+			<trans-unit id="content_element.carousel" resname="content_element.carousel">
+				<source>Carousel</source>
+			</trans-unit>
+			<trans-unit id="content_element.carousel.description" resname="content_element.carousel.description">
+				<source></source>  
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,25 @@
+###########################################
+############# CTYPE: CAROUSEL #############
+###########################################
+
+tt_content.carousel >
+tt_content.carousel =< lib.contentElement
+tt_content.carousel {
+    ################
+    ### TEMPLATE ###
+    ################
+    templateName = Carousel
+    ##########################
+    ### DATA PREPROCESSING ###
+    ##########################
+    dataProcessing {
+        10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+        10 {
+            references.fieldName = image
+            as = slides
+        }
+    }
+}
+
+
+
