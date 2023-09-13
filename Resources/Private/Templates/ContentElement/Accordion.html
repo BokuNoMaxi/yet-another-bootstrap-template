@@ -1,0 +1,21 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:layout name="Default" />
+    <f:section name="Main">
+        <div class="accordion" id="carousel-{data.uid}">
+            <f:for each="{items}" as="item" iteration="i">
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="carousel-{data.uid}-item-{i.index}">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#carousel-{data.uid}-item-{i.index}-collapse" aria-expanded="true" aria-controls="carousel-{data.uid}-item-{i.index}-collapse">
+                        {item.data.header}
+                        </button>
+                    </h3>
+                    <div id="carousel-{data.uid}-item-{i.index}-collapse" class="accordion-collapse collapse show" aria-labelledby="carousel-{data.uid}-item-{i.index}" data-bs-parent="#carousel-{data.uid}">
+                        <div class="accordion-body">
+                            <f:format.html>{item.data.bodytext}</f:format.html>
+                        </div>
+                      </div>
+                </div>
+            </f:for>
+          </div>
+      </f:section>
+</html>

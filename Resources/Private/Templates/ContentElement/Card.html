@@ -1,0 +1,19 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+  <f:layout name="Default" />
+  <f:section name="Main">
+    <div class="row">
+      <f:for each="{items}" as="item" iteration="i">
+        <div class="col-6">
+          <div class="card">
+            <!-- <img src="" class="card-img-top" alt="..."> -->
+            <div class="card-body">
+              <h5 class="card-title">{item.data.header}</h5>
+              <p class="card-text"><f:format.html>{item.data.bodytext}</f:format.html></p>
+              <a href="{item.data.link}" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      </f:for>
+    </div>
+  </f:section>
+</html>

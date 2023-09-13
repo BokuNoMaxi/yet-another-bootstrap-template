@@ -1,0 +1,35 @@
+##########################
+#### CTYPE: Accordion ####
+##########################
+
+tt_content.card >
+tt_content.card =< lib.contentElement
+tt_content.card {
+
+    ################
+    ### TEMPLATE ###
+    ################
+    templateName = Card
+
+    ##########################
+    ### DATA PREPROCESSING ###
+    ##########################
+    dataProcessing {
+        10 = TYPO3\CMS\Frontend\DataProcessing\FlexFormProcessor
+        10.as = flexform
+        
+        20 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+        20 {
+            table = simple_item
+            pidInList.field = pid
+            where {
+                data = field:uid
+                intval = 1
+                wrap = tt_content=|
+            }
+            orderBy = sorting
+            as = items
+        }
+    }
+
+}

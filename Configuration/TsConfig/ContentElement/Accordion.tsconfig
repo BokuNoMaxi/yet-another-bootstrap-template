@@ -1,0 +1,18 @@
+####################################
+#### NEW CONTENT ELEMENT WIZARD ####
+####################################
+mod.wizards.newContentElement.wizardItems {
+  common {
+    elements {
+      accordion {
+          iconIdentifier = accordion
+          title = LLL:EXT:yet_another_bootstrap_template/Resources/Private/Language/Backend.xlf:content_element.accordion
+          description = LLL:EXT:yet_another_bootstrap_template/Resources/Private/Language/Backend.xlf:content_element.accordion.description
+          tt_content_defValues {
+              CType = accordion
+          }
+      }
+    }
+    show := addToList(accordion)
+  }
+}

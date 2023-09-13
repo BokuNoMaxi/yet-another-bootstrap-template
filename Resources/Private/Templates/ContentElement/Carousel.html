@@ -2,16 +2,18 @@
     <f:layout name="Default" />
     <f:section name="Main">
         <div id="carousel-{data.uid}" class="carousel slide" data-bs-ride="false">
-            <div class="carousel-indicators">
-                <f:for each="{slides}" as="slide" iteration="i">
-                    <button type="button" data-bs-target="#carousel-{data.uid}" data-bs-slide-to="{i.index}" {f:if(condition: '{i.isFirst}', then: 'class="active" aria-current="true"')}"  aria-label="Slide 1"></button>
-                </f:for>
-            </div>
+            <f:if condition="{slides-> f:count()} > 1">
+                    <div class="carousel-indicators">
+                    <f:for each="{slides}" as="slide" iteration="i">
+                        <button type="button" data-bs-target="#carousel-{data.uid}" data-bs-slide-to="{i.index}" {f:if(condition: '{i.isFirst}', then: 'class="active" aria-current="true"')}"  aria-label="Slide 1"></button>
+                    </f:for>
+                </div>
+            </f:if>
             
             <div class="carousel-inner">
                 <f:for each="{slides}" as="slide" iteration="i">
                     <div class="carousel-item {f:if(condition: '{i.isFirst}', then: 'active')}">
-                        <f:image image="{slide}" class="d-block w-100" treatIdAsReference="1" />
+                        <f:image image="{slide}" class="d-block w-100 h-auto" treatIdAsReference="1" />
                         <f:if condition="{slide.title} || {slide.description}">
                             <div class="carousel-caption d-none d-md-block">
                                 <p class="h5">{slide.title}</p>
@@ -21,14 +23,16 @@
                     </div>
                 </f:for>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carousel-{data.uid}" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carousel-{data.uid}" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
+            <f:if condition="{slides-> f:count()} > 1">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-{data.uid}" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel-{data.uid}" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+                </button>
+            </f:if>
           </div>
       </f:section>
 </html>
