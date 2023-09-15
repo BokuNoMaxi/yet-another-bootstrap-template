@@ -1,1 +1,2 @@
-@import 'EXT:yet_another_bootstrap_template/Configuration/TsConfig/Page/Mod/WebLayout/Layouts.tsconfig'
+@import 'EXT:yet_another_bootstrap_template/Configuration/TsConfig/Page/BackendLayouts/*.tsconfig'
+@import 'EXT:yet_another_bootstrap_template/Configuration/TsConfig/ContentElement/*.tsconfig'

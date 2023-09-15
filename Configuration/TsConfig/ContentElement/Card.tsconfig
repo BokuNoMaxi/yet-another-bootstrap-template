@@ -4,15 +4,15 @@
 mod.wizards.newContentElement.wizardItems {
   common {
     elements {
-        card_group {
+        card {
             iconIdentifier = card-group
             title = LLL:EXT:yet_another_bootstrap_template/Resources/Private/Language/Backend.xlf:content_element.card
             description = LLL:EXT:yet_another_bootstrap_template/Resources/Private/Language/Backend.xlf:content_element.card.description
             tt_content_defValues {
-                CType = card_group
+                CType = card
             }
         }
     }
-    show := addToList(card_group)
+    show := addToList(card)
   }
 }
