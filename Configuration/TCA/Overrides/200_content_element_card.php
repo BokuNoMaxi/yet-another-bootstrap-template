@@ -23,7 +23,7 @@ if (!is_array($GLOBALS["TCA"]["tt_content"]["types"]["card"] ?? false)) {
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
   "tt_content",
   "CType",
-  ["card", "card", "card", "Bootstrap5"]
+  ["Card", "card", "card-group", "Bootstrap5"]
 );
 
 // Assign Icon

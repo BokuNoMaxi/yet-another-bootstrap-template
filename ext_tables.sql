@@ -4,6 +4,11 @@
 --
 CREATE TABLE tt_content (
     simple_item int(11) unsigned DEFAULT '0',
+    container varchar(16) DEFAULT 'container' NOT NULL,
+    background_color varchar(15),
+    padding varchar(80) DEFAULT '' NOT NULL,
+    gutter varchar(80) DEFAULT '' NOT NULL,
+    section_border varchar(1),
 );
 
 

@@ -75,6 +75,55 @@
 			<trans-unit id="type.default" resname="type.default">
 				<source>Default</source>
 			</trans-unit>
+
+			<trans-unit id="template.vertical" resname="template.vertical">
+				<source>Vertical</source>
+			</trans-unit>
+			<trans-unit id="template.horizontal" resname="template.horizontal">
+				<source>Horizontal</source>
+			</trans-unit>
+			<trans-unit id="template.bg-color" resname="template.bg-color">
+				<source>Background color</source>
+			</trans-unit>
+			<trans-unit id="template.bg-color.none" resname="template.bg-color.none">
+				<source>None</source>
+			</trans-unit>
+			<trans-unit id="template.bg-color.primary" resname="template.bg-color.primary">
+				<source>Primary</source>
+			</trans-unit>
+			<trans-unit id="template.bg-color.secondary" resname="template.bg-color.secondary">
+				<source>Secondary</source>
+			</trans-unit>
+			<trans-unit id="template.container" resname="template.container">
+				<source>Container</source>
+			</trans-unit>
+			<trans-unit id="template.container.default" resname="template.container.default">
+				<source>Default</source>
+			</trans-unit>
+			<trans-unit id="template.container.md" resname="template.container.md">
+				<source>Medium</source>
+			</trans-unit>
+			<trans-unit id="template.container.lg" resname="template.container.lg">
+				<source>Large</source>
+			</trans-unit>
+			<trans-unit id="template.container.xl" resname="template.container.xl">
+				<source>XLarge</source>
+			</trans-unit>
+			<trans-unit id="template.container.xxl" resname="template.container.xxl">
+				<source>XXLarge</source>
+			</trans-unit>
+			<trans-unit id="template.container.fluid" resname="template.container.fluid">
+				<source>Full width</source>
+			</trans-unit>
+			<trans-unit id="template.gutter" resname="template.container">
+				<source>Gutter</source>
+			</trans-unit>
+			<trans-unit id="template.padding" resname="template.container">
+				<source>Padding</source>
+			</trans-unit>
+			<trans-unit id="template.border" resname="template.container">
+				<source>Border</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

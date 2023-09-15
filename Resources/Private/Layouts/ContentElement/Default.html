@@ -1,6 +1,13 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-    <section class="ctype-{data.CType}">
-        <div id="c{data.uid}" class="container">
+<html 
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" 
+    xmlns:yabt="http://typo3.org/ns/BokuNo/YABT/ViewHelpers" 
+    data-namespace-typo3-fluid="true">
+    <f:variable name="section_border" value="{f:if(condition: '{data.section_border}', then: 'section__border')}" />
+    <f:variable name="background_color" value="{f:if(condition: '{data.background_color}', then: '{data.background_color}')}"/>
+    <f:variable name="padding"><yabt:stringReplace Search="," Replace=" " String="{data.padding}" /></f:variable>
+    
+    <section class="ctype-{data.CType} {section_border} {background_color}">
+        <div id="c{data.uid}" class="{data.container} {padding}">
             <f:render partial="Header/All" arguments="{_all}" />
             <f:render section="Main" optional="true" />
         </div>

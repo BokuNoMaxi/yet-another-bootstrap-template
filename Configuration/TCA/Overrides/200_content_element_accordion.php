@@ -23,7 +23,7 @@ if (!is_array($GLOBALS["TCA"]["tt_content"]["types"]["accordion"] ?? false)) {
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
   "tt_content",
   "CType",
-  ["accordion", "accordion", "accordion", "Bootstrap5"]
+  ["Accordion", "accordion", "accordion", "Bootstrap5"]
 );
 
 // Assign Icon
