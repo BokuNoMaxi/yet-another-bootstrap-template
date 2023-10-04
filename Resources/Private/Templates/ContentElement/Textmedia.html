@@ -1,0 +1,36 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Main">
+    <f:variable name="thumbnail" value="{f:if(condition: '{data.thumbnail}', then: 'img-thumbnail')}" />
+    <f:variable name="rounded" value="{f:if(condition: '{data.rounded}', then: 'rounded')}" />
+    <f:variable name="ratio" value="{f:if(condition: '{data.ratio}', then: 'ratio {data.ratio}')}" />
+    <div class="row">
+        <f:if condition="{gallery.position.horizontal}==left">
+            <f:then>
+                <f:render section="image" arguments="{files:files, rounded: rounded, ratio:ratio, thumbnail: thumbnail}" />
+                <f:render section="text" arguments="{bodytext: data.bodytext}" />
+            </f:then>
+            <f:else>
+                <f:render section="text" arguments="{bodytext: data.bodytext}" />
+                <f:render section="image" arguments="{files:files,rounded: rounded, ratio:ratio, thumbnail: thumbnail}" />
+            </f:else>
+        </f:if>
+    </div>
+
+</f:section>
+</html>
+
+<f:section name="text">
+    <div class="col">
+        <f:format.html>{bodytext}</f:format.html>
+    </div>
+</f:section>
+<f:section name="image">
+    <div class="col-4">
+        <f:for each="{files}" as="item" iteration="i">
+            <div class="col-12 {ratio}">
+                <f:image class="img-fluid {rounded} {thumbnail}" image="{item}" treatIdAsReference="1" />
+            </div>    
+        </f:for>
+    </div>
+</f:section>
