@@ -16,3 +16,15 @@ mod.wizards.newContentElement.wizardItems {
     show := addToList(card)
   }
 }
+
+TCEFORM {
+  tt_content {
+    imageorient {
+      types {
+        card {
+          removeItems = 1,2,9,10,17,18
+        }
+      }
+    }
+  }
+}

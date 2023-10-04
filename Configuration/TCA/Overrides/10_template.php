@@ -31,12 +31,38 @@ $newFields = [
             "type" => "select",
             "renderType" => "selectSingle",
             "items" => [
-                ["label" => $lll."template.bg-color.none", "value" => ""],
-                ["label" => $lll."template.bg-color.primary", "value" => "bg-primary"],
-                ["label" => $lll."template.bg-color.secondary", "value" => "bg-secondary"],
+                ["label" => $lll."color.none", "value" => ""],
+                ["label" => $lll."color.primary", "value" => "bg-primary"],
+                ["label" => $lll."color.secondary", "value" => "bg-secondary"],
+                ["label" => $lll."color.success", "value" => "bg-success"],
+                ["label" => $lll."color.danger", "value" => "bg-danger"],
+                ["label" => $lll."color.warning", "value" => "bg-warning"],
+                ["label" => $lll."color.info", "value" => "bg-info"],
+                ["label" => $lll."color.light", "value" => "bg-light"],
+                ["label" => $lll."color.dark", "value" => "bg-dark"],
             ],
         ],
-    ],
+      ],
+      "border_color" => [
+        "exclude" => true,
+        "label" => $lll."template.border-color",
+        "config" => [
+            "type" => "select",
+            "renderType" => "selectSingle",
+            "items" => [
+                ["label" => $lll."color.none", "value" => ""],
+                ["label" => $lll."color.primary", "value" => "border-primary"],
+                ["label" => $lll."color.secondary", "value" => "border-secondary"],
+                ["label" => $lll."color.success", "value" => "border-success"],
+                ["label" => $lll."color.danger", "value" => "border-danger"],
+                ["label" => $lll."color.warning", "value" => "border-warning"],
+                ["label" => $lll."color.info", "value" => "border-info"],
+                ["label" => $lll."color.light", "value" => "border-light"],
+                ["label" => $lll."color.dark", "value" => "border-dark"],
+            ],
+        ],
+      ],
+
     "padding" => [
         "exclude" => true,
         "label" => $lll."template.padding",
@@ -140,12 +166,22 @@ $newFields = [
             ],
         ],
     ],
+    "full_link" => [
+        "exclude" => true,
+        "label" => $lll."template.full-link",
+        "config" => [
+            "type" => "check",
+            "items" => [
+                ["label" => $lll."template.full-link", "value" => "1"]
+            ],
+        ],
+    ],
 ];
 
 ExtensionManagementUtility::addTCAcolumns("tt_content", $newFields);
 
 $GLOBALS["TCA"]["tt_content"]["palettes"]["frames"]["showitem"] =
-  "layout, container, background_color, section_border,--linebreak--, padding";
+  "layout, container, background_color, border_color, --linebreak--, section_border, --linebreak--, padding";
 
 $GLOBALS["TCA"]["tt_content"]["palettes"]["mediaAdjustments"]["showitem"] =
   "ratio, imagewidth, imageheight,--linebreak--,
@@ -154,3 +190,8 @@ $GLOBALS["TCA"]["tt_content"]["palettes"]["mediaAdjustments"]["showitem"] =
 $GLOBALS['TCA']['tt_content']['palettes']['objectfit'] = [
     'showitem' => 'object_fit, max_height'
 ];
+
+$GLOBALS['TCA']['tt_content']['palettes']['cards'] = [
+    'showitem' => 'full_link'
+];
+

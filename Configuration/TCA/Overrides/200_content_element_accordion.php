@@ -38,7 +38,7 @@ $GLOBALS["TCA"]["tt_content"]["types"]["accordion"] = array_replace_recursive(
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.headers;headers,
-                simple_item,
+                accordion_item,
             --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.appearanceLinks;appearanceLinks,
@@ -56,4 +56,26 @@ $GLOBALS["TCA"]["tt_content"]["types"]["accordion"] = array_replace_recursive(
   ]
 );
 
+$GLOBALS["TCA"]["tt_content"]["columns"]["accordion_item"] = [
+  "label" =>
+    "LLL:EXT:yet_another_bootstrap_template/Resources/Private/Language/Backend.xlf:accordion_item",
+  "config" => [
+    "type" => "inline",
+    "foreign_table" => "accordion_item",
+    "foreign_field" => "tt_content",
+    "appearance" => [
+      "useSortable" => true,
+      "showSynchronizationLink" => true,
+      "showAllLocalizationLink" => true,
+      "showPossibleLocalizationRecords" => true,
+      "expandSingle" => true,
+      "enabledControls" => [
+        "localize" => true,
+      ],
+    ],
+    "behaviour" => [
+      "mode" => "select",
+    ],
+  ],
+];
 

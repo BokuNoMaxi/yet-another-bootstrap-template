@@ -6,6 +6,52 @@
 			<authorEmail>4tmestorage@gmail.com</authorEmail>
 		</header>
 		<body>
+			<trans-unit id="tt_content" resname="tt_content">
+				<source>Content Element</source>
+			</trans-unit>
+			<trans-unit id="header" resname="header">
+				<source>Header</source>
+			</trans-unit>
+			<trans-unit id="subheader" resname="subheader">
+				<source>Sub Header</source>
+			</trans-unit>
+			<trans-unit id="header_layout" resname="header_layout">
+				<source>Header Layout</source>
+			</trans-unit>
+			<trans-unit id="header_position" resname="header_position">
+				<source>Header Position</source>
+			</trans-unit>
+			<trans-unit id="header_position.default" resname="header_position.default">
+				<source>Default</source>
+			</trans-unit>
+			<trans-unit id="header_position.center" resname="header_position.center">
+				<source>Center</source>
+			</trans-unit>
+			<trans-unit id="header_position.right" resname="header_position.right">
+				<source>Right</source>
+			</trans-unit>
+			<trans-unit id="header_position.left" resname="header_position.left">
+				<source>Left</source>
+			</trans-unit>
+			<trans-unit id="bodytext" resname="bodytext">
+				<source>Bodytext</source>
+			</trans-unit>
+			<trans-unit id="link" resname="link">
+				<source>Link</source>
+			</trans-unit>
+			<trans-unit id="image" resname="image">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="assets" resname="assets">
+				<source>Assets</source>
+			</trans-unit>
+			<trans-unit id="date" resname="date">
+				<source>Date</source>
+			</trans-unit>
+			<trans-unit id="type.default" resname="type.default">
+				<source>Default</source>
+			</trans-unit>
+
 			<trans-unit id="content_element.carousel" resname="content_element.carousel">
 				<source>Carousel</source>
 			</trans-unit>
@@ -24,56 +70,30 @@
 			<trans-unit id="content_element.card.description" resname="content_element.carousel.description">
 				<source></source>  
 			</trans-unit>
-			<trans-unit id="simple_item" resname="simple_item">
-				<source>Item</source>
+			<trans-unit id="accordion_item" resname="accordion_item">
+				<source>Accordion Item</source>
 			</trans-unit>
-			<trans-unit id="simple_item.tt_content" resname="simple_item.tt_content">
-				<source>Content Element</source>
+			<trans-unit id="card_item" resname="card_item">
+				<source>Card Item</source>
 			</trans-unit>
-			<trans-unit id="simple_item.tt_content" resname="simple_item.tt_content">
-				<source>Content Element</source>
+
+			<trans-unit id="image-position" resname="image-position">
+				<source>Image position</source>
 			</trans-unit>
-			<trans-unit id="simple_item.header" resname="simple_item.header">
-				<source>Header</source>
+			<trans-unit id="image-position.top" resname="image-position.top">
+				<source>Top</source>
 			</trans-unit>
-			<trans-unit id="simple_item.subheader" resname="simple_item.subheader">
-				<source>Sub Header</source>
+			<trans-unit id="image-position.bottom" resname="image-position.bottom">
+				<source>Bottom</source>
 			</trans-unit>
-			<trans-unit id="simple_item.header_layout" resname="simple_item.header_layout">
-				<source>Header Layout</source>
-			</trans-unit>
-			<trans-unit id="simple_item.header_position" resname="simple_item.header_position">
-				<source>Header Position</source>
-			</trans-unit>
-			<trans-unit id="simple_item.header_position.default" resname="simple_item.header_position.default">
-				<source>Default</source>
-			</trans-unit>
-			<trans-unit id="simple_item.header_position.center" resname="simple_item.header_position.center">
-				<source>Center</source>
-			</trans-unit>
-			<trans-unit id="simple_item.header_position.right" resname="simple_item.header_position.right">
-				<source>Right</source>
-			</trans-unit>
-			<trans-unit id="simple_item.header_position.left" resname="simple_item.header_position.left">
+			<trans-unit id="image-position.left" resname="image-position.left">
 				<source>Left</source>
 			</trans-unit>
-			<trans-unit id="simple_item.bodytext" resname="simple_item.bodytext">
-				<source>Bodytext</source>
+			<trans-unit id="image-position.right" resname="image-position.right">
+				<source>Right</source>
 			</trans-unit>
-			<trans-unit id="simple_item.link" resname="simple_item.link">
-				<source>Link</source>
-			</trans-unit>
-			<trans-unit id="simple_item.image" resname="simple_item.image">
-				<source>Image</source>
-			</trans-unit>
-			<trans-unit id="simple_item.assets" resname="simple_item.assets">
-				<source>Assets</source>
-			</trans-unit>
-			<trans-unit id="simple_item.date" resname="simple_item.date">
-				<source>Date</source>
-			</trans-unit>
-			<trans-unit id="type.default" resname="type.default">
-				<source>Default</source>
+			<trans-unit id="image-position.fill" resname="image-position.fill">
+				<source>Fill</source>
 			</trans-unit>
 
 			<trans-unit id="template.vertical" resname="template.vertical">
@@ -85,15 +105,37 @@
 			<trans-unit id="template.bg-color" resname="template.bg-color">
 				<source>Background color</source>
 			</trans-unit>
-			<trans-unit id="template.bg-color.none" resname="template.bg-color.none">
+			<trans-unit id="template.border-color" resname="template.bg-color">
+				<source>Border color</source>
+			</trans-unit>
+			<trans-unit id="color.none" resname="color.none">
 				<source>None</source>
 			</trans-unit>
-			<trans-unit id="template.bg-color.primary" resname="template.bg-color.primary">
+			<trans-unit id="color.primary" resname="color.primary">
 				<source>Primary</source>
 			</trans-unit>
-			<trans-unit id="template.bg-color.secondary" resname="template.bg-color.secondary">
+			<trans-unit id="color.secondary" resname="color.secondary">
 				<source>Secondary</source>
 			</trans-unit>
+			<trans-unit id="color.success" resname="color.success">
+				<source>Success</source>
+			</trans-unit>
+			<trans-unit id="color.danger" resname="color.danger">
+				<source>Danger</source>
+			</trans-unit>
+			<trans-unit id="color.warning" resname="color.warning">
+				<source>Warning</source>
+			</trans-unit>
+			<trans-unit id="color.info" resname="color.info">
+				<source>Info</source>
+			</trans-unit>
+			<trans-unit id="color.light" resname="color.light">
+				<source>Light</source>
+			</trans-unit>
+			<trans-unit id="color.dark" resname="color.dark">
+				<source>Dark</source>
+			</trans-unit>
+
 			<trans-unit id="template.container" resname="template.container">
 				<source>Container</source>
 			</trans-unit>
@@ -153,6 +195,9 @@
 			</trans-unit>
 			<trans-unit id="template.maxheight" resname="template.maxheight">
 				<source>Max height (vh)</source>
+			</trans-unit>
+			<trans-unit id="template.full-link" resname="template.full-link">
+				<source>Full link</source>
 			</trans-unit>
 		</body>
 	</file>

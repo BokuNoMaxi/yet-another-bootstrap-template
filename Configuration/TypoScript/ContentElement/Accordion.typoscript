@@ -20,7 +20,7 @@ tt_content.accordion {
 
         20 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
         20 {
-            table = simple_item
+            table = accordion_item
             pidInList.field = pid
             where {
                 data = field:uid

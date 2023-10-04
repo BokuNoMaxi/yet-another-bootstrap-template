@@ -20,7 +20,7 @@ tt_content.card {
         
         20 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
         20 {
-            table = simple_item
+            table = card_item
             pidInList.field = pid
             where {
                 data = field:uid

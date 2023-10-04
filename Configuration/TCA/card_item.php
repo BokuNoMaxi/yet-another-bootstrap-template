@@ -7,6 +7,7 @@
 
 $generalLanguageFile =
   "EXT:core/Resources/Private/Language/locallang_general.xlf";
+$lll = "LLL:EXT:yet_another_bootstrap_template/Resources/Private/Language/Backend.xlf:";
 
 return [
   "ctrl" => [
@@ -14,9 +15,7 @@ return [
     "sortby" => "sorting",
     "tstamp" => "tstamp",
     "crdate" => "crdate",
-    "title" =>
-      "LLL:EXT:yet_another_bootstrap_template/Resources/Private/Language/Backend.xlf:simple_item",
-    "type" => "item_type",
+    "title" => $lll.":card_item",
     "delete" => "deleted",
     "versioningWS" => true,
     "origUid" => "t3_origuid",
@@ -32,7 +31,7 @@ return [
       "endtime" => "endtime",
     ],
     "typeicon_classes" => [
-      "default" => "carousel-item",
+      "default" => "card-group-item",
     ],
   ],
   "types" => [
@@ -41,6 +40,8 @@ return [
         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,
         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.header;header,
         --palette--;;default-type,
+        --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.media,
+                image,imageorient,--palette--;;media,
         --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,
         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.visibility;visibility,
         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,
@@ -60,24 +61,25 @@ return [
                 --linebreak--,
                 subheader,
                 --linebreak--,
+                card_header,
                 header_layout,
                 header_position,
             ',
     ],
     "general" => [
-      "showitem" => '
-                tt_content,
-                item_type;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType_formlabel,
-                --linebreak--,
-            ',
+      "showitem" => 'tt_content',
     ],
     "default-type" => [
       "showitem" => '
                 bodytext,--linebreak--,
+                card_footer,--linebreak--,
                 link,--linebreak--,
-                image,
+                datetime,
 
             ',
+    ],
+    "media" => [
+      "showitem" => 'background_color, border_color'
     ],
     "visibility" => [
       "showitem" => '
@@ -93,8 +95,7 @@ return [
   "columns" => [
     "tt_content" => [
       "exclude" => true,
-      "label" =>
-        "LLL:EXT:yet_another_bootstrap_template/Resources/Private/Language/Backend.xlf:simple_item.tt_content",
+      "label" => $lll."tt_content",
       "config" => [
         "type" => "select",
         "renderType" => "selectSingle",
@@ -104,22 +105,6 @@ return [
         "maxitems" => 1,
         "default" => 0,
       ],
-    ],
-    "item_type" => [
-      "label" => "LLL:" . $generalLanguageFile . ":LGL.type",
-      "config" => [
-        "type" => "select",
-        "renderType" => "selectSingle",
-        "items" => [
-          [
-            "label" =>
-              "LLL:EXT:yet_another_bootstrap_template/Resources/Private/Language/Backend.xlf:type.default",
-            "value" => "0",
-            "icon" => "content-textmedia",
-          ],
-        ],
-      ],
-      "l10n_mode" => "exclude",
     ],
     "hidden" => [
       "exclude" => true,
@@ -173,9 +158,9 @@ return [
         "type" => "select",
         "renderType" => "selectSingle",
         "items" => [["label" => "", "value" => 0]],
-        "foreign_table" => "simple_item",
+        "foreign_table" => "card_item",
         "foreign_table_where" =>
-          "AND simple_item.pid=###CURRENT_PID###",
+          "AND card_item.pid=###CURRENT_PID###",
         "default" => 0,
       ],
     ],
@@ -187,8 +172,7 @@ return [
 
     "header" => [
       "exclude" => true,
-      "label" =>
-        "LLL:EXT:yet_another_bootstrap_template/Resources/Private/Language/Backend.xlf:simple_item.header",
+      "label" => $lll."header",
       "config" => [
         "type" => "input",
         "size" => 50,
@@ -198,8 +182,7 @@ return [
     ],
     "header_layout" => [
       "exclude" => true,
-      "label" =>
-        "LLL:EXT:yet_another_bootstrap_template/Resources/Private/Language/Backend.xlf:simple_item.header_layout",
+      "label" => $lll."header_layout",
       "config" => [
         "type" => "select",
         "renderType" => "selectSingle",
@@ -213,31 +196,26 @@ return [
       "l10n_mode" => "exclude",
     ],
     "header_position" => [
-      "label" =>
-        "LLL:EXT:yet_another_bootstrap_template/Resources/Private/Language/Backend.xlf:simple_item.header_position",
+      "label" => $lll."header_position",
       "exclude" => true,
       "config" => [
         "type" => "select",
         "renderType" => "selectSingle",
         "items" => [
           [
-            "label" =>
-              "LLL:EXT:yet_another_bootstrap_template/Resources/Private/Language/Backend.xlf:simple_item.header_position.default",
+            "label" => $lll.":header_position.default",
             "value" => "",
           ],
           [
-            "label" =>
-              "LLL:EXT:yet_another_bootstrap_template/Resources/Private/Language/Backend.xlf:simple_item.header_position.center",
+            "label" => $lll.":header_position.center",
             "value" => "center",
           ],
           [
-            "label" =>
-              "LLL:EXT:yet_another_bootstrap_template/Resources/Private/Language/Backend.xlf:simple_item.header_position.right",
+            "label" => $lll.":header_position.right",
             "value" => "right",
           ],
           [
-            "label" =>
-              "LLL:EXT:yet_another_bootstrap_template/Resources/Private/Language/Backend.xlf:simple_item.header_position.left",
+            "label" => $lll.":header_position.left",
             "value" => "left",
           ],
         ],
@@ -246,8 +224,7 @@ return [
     ],
     "subheader" => [
       "exclude" => true,
-      "label" =>
-        "LLL:EXT:yet_another_bootstrap_template/Resources/Private/Language/Backend.xlf:simple_item.subheader",
+      "label" => $lll."subheader",
       "config" => [
         "type" => "input",
         "size" => 50,
@@ -256,8 +233,7 @@ return [
     ],
 
     "bodytext" => [
-      "label" =>
-        "LLL:EXT:yet_another_bootstrap_template/Resources/Private/Language/Backend.xlf:simple_item.bodytext",
+      "label" => $lll."bodytext",
       "l10n_mode" => "prefixLangTitle",
       "l10n_cat" => "text",
       "config" => [
@@ -270,8 +246,7 @@ return [
     ],
     "link" => [
       "exclude" => 1,
-      "label" =>
-        "LLL:EXT:yet_another_bootstrap_template/Resources/Private/Language/Backend.xlf:simple_item.link",
+      "label" => $lll."link",
       "config" => [
         "type" => "input",
         "renderType" => "inputLink",
@@ -282,7 +257,7 @@ return [
           "linkPopup" => [
             "options" => [
               "title" =>
-                "LLL:EXT:yet_another_bootstrap_template/Resources/Private/Language/Backend.xlf:simple_item.link",
+                 $lll.":link",
             ],
           ],
         ],
@@ -292,32 +267,117 @@ return [
 
     "image" => [
       "exclude" => true,
-      "label" =>
-        "LLL:EXT:yet_another_bootstrap_template/Resources/Private/Language/Backend.xlf:simple_item.image",
+      "label" => $lll."image",
       "config" => [
         "type" => "file",
         "maxitems" => 1,
         "allowed" => "common-image-types",
       ],
     ],
-    "assets" => [
+    "imageorient" => [
       "exclude" => true,
-      "label" =>
-        "LLL:EXT:yet_another_bootstrap_template/Resources/Private/Language/Backend.xlf:simple_item.assets",
+      "label" => $lll."image-position",
       "config" => [
-        "type" => "file",
-        "maxitems" => 1,
-        "allowed" => "common-media-types",
+          "type" => "select",
+          "renderType" => "selectSingle",
+          'items' => [
+            [
+                'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.0',
+                'value' => 0,
+                'icon' => 'content-beside-text-img-above-center',
+            ],
+            [
+                'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.3',
+                'value' => 8,
+                'icon' => 'content-beside-text-img-below-center',
+            ],
+            [
+                'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.9',
+                'value' => 25,
+                'icon' => 'content-beside-text-img-right',
+            ],
+            [
+                'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.10',
+                'value' => 26,
+                'icon' => 'content-beside-text-img-left',
+            ],
+        ],
+        'default' => 0,
+        'fieldWizard' => [
+            'selectIcons' => [
+                'disabled' => false,
+            ],
+        ],
       ],
     ],
-    "date" => [
+
+    "datetime" => [
       "exclude" => true,
-      "label" =>
-        "LLL:EXT:yet_another_bootstrap_template/Resources/Private/Language/Backend.xlf:simple_item.date",
+      "label" => $lll."date",
       "config" => [
-        "type" => "date"
-        
+        'type' => 'datetime',
+        'format' => 'date',
+        'eval' => 'int',
+        'default' => 0,
       ],
     ],
-  ],
+    "background_color" => [
+      "exclude" => true,
+      "label" => $lll."template.bg-color",
+      "config" => [
+          "type" => "select",
+          "renderType" => "selectSingle",
+          "items" => [
+              ["label" => $lll."color.none", "value" => ""],
+              ["label" => $lll."color.primary", "value" => "bg-primary"],
+              ["label" => $lll."color.secondary", "value" => "bg-secondary"],
+              ["label" => $lll."color.success", "value" => "bg-success"],
+              ["label" => $lll."color.danger", "value" => "bg-danger"],
+              ["label" => $lll."color.warning", "value" => "bg-warning"],
+              ["label" => $lll."color.info", "value" => "bg-info"],
+              ["label" => $lll."color.light", "value" => "bg-light"],
+              ["label" => $lll."color.dark", "value" => "bg-dark"],
+          ],
+      ],
+    ],
+    "border_color" => [
+      "exclude" => true,
+      "label" => $lll."template.border-color",
+      "config" => [
+          "type" => "select",
+          "renderType" => "selectSingle",
+          "items" => [
+              ["label" => $lll."color.none", "value" => ""],
+              ["label" => $lll."color.primary", "value" => "border-primary"],
+              ["label" => $lll."color.secondary", "value" => "border-secondary"],
+              ["label" => $lll."color.success", "value" => "border-success"],
+              ["label" => $lll."color.danger", "value" => "border-danger"],
+              ["label" => $lll."color.warning", "value" => "border-warning"],
+              ["label" => $lll."color.info", "value" => "border-info"],
+              ["label" => $lll."color.light", "value" => "border-light"],
+              ["label" => $lll."color.dark", "value" => "border-dark"],
+          ],
+      ],
+    ],
+    "card_header" => [
+      "exclude" => true,
+      "label" => $lll."template.card_header",
+      "config" => [
+          "type" => "check",
+          "items" => [
+              ["label" => $lll."template.card_header", "1"]
+          ],
+      ],
+    ],
+    "card_footer" => [
+      "label" =>"$lll.footer",
+      "config" => [
+        "type" => "text",
+        "cols" => "80",
+        "rows" => "5",
+        "softref" => "typolink_tag,email[subst],url",
+        "enableRichtext" => true,
+      ],
+    ]
+  ]
 ];
