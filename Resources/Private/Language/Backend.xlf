@@ -124,6 +124,36 @@
 			<trans-unit id="template.border" resname="template.container">
 				<source>Border</source>
 			</trans-unit>
+			<trans-unit id="template.ratio" resname="template.ratio">
+				<source>Aspect ratio</source>
+			</trans-unit>
+			<trans-unit id="template.rounded" resname="template.rounded">
+				<source>Round corners</source>
+			</trans-unit>
+			<trans-unit id="template.thumbnail" resname="template.thumbnail">
+				<source>Thumbnail</source>
+			</trans-unit>
+			<trans-unit id="template.objectfit" resname="template.objectfit">
+				<source>Object fit</source>
+			</trans-unit>
+			<trans-unit id="template.objectfit.none" resname="template.objectfit.none">
+				<source>Default</source>
+			</trans-unit>
+			<trans-unit id="template.objectfit.contain" resname="template.objectfit.contain">
+				<source>Contain</source>
+			</trans-unit>
+			<trans-unit id="template.objectfit.cover" resname="template.objectfit.cover">
+				<source>Cover</source>
+			</trans-unit>
+			<trans-unit id="template.objectfit.fill" resname="template.objectfit.fill">
+				<source>Fill</source>
+			</trans-unit>
+			<trans-unit id="template.objectfit.scale-down" resname="template.objectfit.scale-down">
+				<source>Scale down</source>
+			</trans-unit>
+			<trans-unit id="template.maxheight" resname="template.maxheight">
+				<source>Max height (vh)</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

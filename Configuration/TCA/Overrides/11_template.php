@@ -2,6 +2,8 @@
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 defined("TYPO3") or die();
+//overrides settings from following files:
+//vendor/typo3/cms-frontend/Configuration/TCA/tt_content.php
 
 $lll = "LLL:EXT:yet_another_bootstrap_template/Resources/Private/Language/Backend.xlf:";
 $newFields = [
@@ -70,10 +72,85 @@ $newFields = [
                 ["label" => $lll."template.border", "1"]
             ],
         ],
-      ],
+    ],
+    "ratio" => [
+        "exclude" => true,
+        "label" => $lll."template.ratio",
+        "config" => [
+            "type" => "select",
+            "renderType" => "selectSingle",
+            "items" => [
+                ["label" => "", "value" => ""],
+                ["label" => "1x1", "value" => "ratio-1x1"],
+                ["label" => "4x3", "value" => "ratio-4x3"],
+                ["label" => "16x9", "value" => "ratio-16x9"],
+                ["label" => "21x9", "value" => "ratio-21x9"],
+            ],
+        ],
+    ],
+    "rounded" => [
+        "exclude" => true,
+        "label" => $lll."template.rounded",
+        "config" => [
+            "type" => "check",
+            "items" => [
+                ["label" => $lll."template.rounded", "value" => "1"]
+            ],
+        ],
+    ],
+    "thumbnail" => [
+        "exclude" => true,
+        "label" => $lll."template.thumbnail",
+        "config" => [
+            "type" => "check",
+            "items" => [
+                ["label" => $lll."template.thumbnail", "value" => "1"]
+            ],
+        ],
+    ],
+    "object_fit" => [
+        "exclude" => true,
+        "label" => $lll."template.objectfit",
+        "config" => [
+            "type" => "select",
+            "renderType" => "selectSingle",
+            "items" => [
+                ["label" => $lll."template.objectfit.none", "value" => ""],
+                ["label" => $lll."template.objectfit.contain", "value" => "object-fit-contain"],
+                ["label" => $lll."template.objectfit.cover", "value" => "object-fit-cover"],
+                ["label" => $lll."template.objectfit.fill", "value" => "object-fit-fill"],
+                ["label" => $lll."template.objectfit.scale-down", "value" => "object-fit-scale"]
+            ],
+        ],
+    ],
+    "max_height" => [
+        "exclude" => true,
+        "label" => $lll."template.maxheight",
+        "config" => [
+            "type" => "select",
+            "renderType" => "selectSingle",
+            "items" => [
+                ["label" => "", ""],
+                ["label" => "20%",  "value" => "mh-20"],
+                ["label" => "40%",  "value" => "mh-40"],
+                ["label" => "60%",  "value" => "mh-60"],
+                ["label" => "80%",  "value" => "mh-80"],
+                ["label" => "80%",  "value" => "mh-80"],
+                ["label" => "100%", "value" => "mh-100"]
+            ],
+        ],
+    ],
 ];
 
 ExtensionManagementUtility::addTCAcolumns("tt_content", $newFields);
 
 $GLOBALS["TCA"]["tt_content"]["palettes"]["frames"]["showitem"] =
   "layout, container, background_color, section_border,--linebreak--, padding";
+
+$GLOBALS["TCA"]["tt_content"]["palettes"]["mediaAdjustments"]["showitem"] =
+  "ratio, imagewidth, imageheight,--linebreak--,
+   thumbnail ,rounded";
+
+$GLOBALS['TCA']['tt_content']['palettes']['objectfit'] = [
+    'showitem' => 'object_fit, max_height'
+];

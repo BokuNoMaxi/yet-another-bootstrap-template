@@ -9,6 +9,11 @@ CREATE TABLE tt_content (
     padding varchar(80) DEFAULT '' NOT NULL,
     gutter varchar(80) DEFAULT '' NOT NULL,
     section_border varchar(1),
+    ratio varchar(12),
+    rounded varchar(1),
+    thumbnail varchar(1),
+    object_fit varchar(18),
+    max_height varchar(6),
 );
 
 

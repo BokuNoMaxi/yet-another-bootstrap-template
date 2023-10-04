@@ -13,7 +13,7 @@
             <div class="carousel-inner">
                 <f:for each="{slides}" as="slide" iteration="i">
                     <div class="carousel-item {f:if(condition: '{i.isFirst}', then: 'active')}">
-                        <f:image image="{slide}" class="d-block w-100 h-auto" treatIdAsReference="1" />
+                        <f:image image="{slide}" class="d-block w-100 h-auto {data.object_fit} {data.max_height}" treatIdAsReference="1" />
                         <f:if condition="{slide.title} || {slide.description}">
                             <div class="carousel-caption d-none d-md-block">
                                 <p class="h5">{slide.title}</p>
