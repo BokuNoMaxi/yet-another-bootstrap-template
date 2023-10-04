@@ -4,10 +4,11 @@
 page=PAGE
 page {
   includeCSSLibs{
-    bootstrap52 = EXT:yet_another_bootstrap_template/Resources/Public/dist/bootstrap-5.2.3-dist/css/bootstrap.min.css
+    bootstrap53 = EXT:yet_another_bootstrap_template/Resources/Public/dist/bootstrap-5.3.2-dist/css/bootstrap.min.css
+    bootstrap53-utilities = EXT:yet_another_bootstrap_template/Resources/Public/CSS/utilities.css
   }
   includeJSFooterlibs {
-    bootstrap52 = EXT:yet_another_bootstrap_template/Resources/Public/dist/bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js
+    bootstrap53 = EXT:yet_another_bootstrap_template/Resources/Public/dist/bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js
   }
   #META-TAGS
   meta {

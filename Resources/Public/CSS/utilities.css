@@ -1,0 +1,16 @@
+/* 
+Additional to:
+https://getbootstrap.com/docs/5.3/forms/select/#sizing 
+*/
+.max-vh-20 {
+    max-height: 20vh !important;
+}
+.max-vh-40 {
+    max-height: 40vh !important;
+}
+.max-vh-60 {
+    max-height: 60vh !important;
+}
+.max-vh-80 {
+    max-height: 80vh !important;
+}
