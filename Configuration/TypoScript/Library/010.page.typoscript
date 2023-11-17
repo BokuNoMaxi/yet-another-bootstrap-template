@@ -6,9 +6,18 @@ page {
   includeCSSLibs{
     bootstrap53 = EXT:yet_another_bootstrap_template/Resources/Public/dist/bootstrap-5.3.2-dist/css/bootstrap.min.css
     bootstrap53-utilities = EXT:yet_another_bootstrap_template/Resources/Public/CSS/utilities.css
+    lightgallery = EXT:yet_another_bootstrap_template/Resources/Public/dist/lightgallery/css/lightgallery.css
+    lightgallery-zoom = EXT:yet_another_bootstrap_template/Resources/Public/dist/lightgallery/css/lg-zoom.css
+    lightgallery-thumbnail = EXT:yet_another_bootstrap_template/Resources/Public/dist/lightgallery/css/lg-thumbnail.css
   }
   includeJSFooterlibs {
     bootstrap53 = EXT:yet_another_bootstrap_template/Resources/Public/dist/bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js
+    lightgallery = EXT:yet_another_bootstrap_template/Resources/Public/dist/lightgallery/lightgallery.min.js
+    lightgallery-zoom = EXT:yet_another_bootstrap_template/Resources/Public/dist/lightgallery/plugins/thumbnail/lg-thumbnail.min.js
+    lightgallery-thumbnail = EXT:yet_another_bootstrap_template/Resources/Public/dist/lightgallery/plugins/zoom/lg-zoom.min.js
+  }
+  includeJSFooter {
+    lightgallery-init = EXT:yet_another_bootstrap_template/Resources/Public/JS/lightgallery.js
   }
   #META-TAGS
   meta {

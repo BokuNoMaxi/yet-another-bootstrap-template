@@ -1,0 +1,3 @@
+lightGallery:
+  load optional
+  licence
