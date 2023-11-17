@@ -3,6 +3,9 @@ services:
     autowire: true
     autoconfigure: true
     public: false
-    
+
   BokuNo\YABT\:
     resource: '../Classes/*'
+
+  BokuNo\YABT\Controller\ThemeController:
+    tags: ['backend.controller']
