@@ -5,7 +5,4 @@ services:
     public: false
 
   BokuNo\YABT\:
-    resource: '../Classes/*'
-
-  BokuNo\YABT\Controller\ThemeController:
-    tags: ['backend.controller']
+    resource: "../Classes/*"
