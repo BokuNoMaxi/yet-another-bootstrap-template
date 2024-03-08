@@ -24,6 +24,26 @@ page {
     charset = utf-8
     viewport = width=device-width, initial-scale=1
   }
+  bodyTag >
+  bodyTagCObject >
+  bodyTagCObject = COA
+  bodyTagCObject {
+    wrap = <body |>
+    10 = COA
+    10 {
+      stdWrap.noTrimWrap = | class="|"|
+      10 = TEXT
+      10 {
+          data = pagelayout
+          replacement.10 {
+              search = pagets__
+              replace =
+          }
+          ifEmpty = default
+          noTrimWrap = |bl-||
+      }
+    }
+  }
   10 {
     templateName = TEXT
     templateName {
@@ -50,6 +70,8 @@ page {
     partialRootPaths {
       0 = EXT:yet_another_bootstrap_template/Resources/Private/Partials/Page
     }
+
+
     variables {
       pageLayout = TEXT
       pageLayout {
