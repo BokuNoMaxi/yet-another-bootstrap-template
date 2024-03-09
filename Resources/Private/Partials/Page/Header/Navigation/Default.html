@@ -1,3 +1,4 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
         <f:link.page class="navbar-brand" pageUid="{site.configuration.rootPageId}">{site.configuration.websiteTitle}</f:link.page>
@@ -18,12 +19,7 @@
                 </f:for>
             </ul>
 
-            <form class="d-flex m-0" role="search">
-              <div class="input-group">
-                <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-primary" type="submit">Search</button>
-              </div>
-            </form>
+            <f:render partial="Header/Navigation/Searchbar" />
         </div>
     </div>
   </nav>
@@ -59,3 +55,4 @@
         </ul>
     </li>
 </f:section>
+</html>
