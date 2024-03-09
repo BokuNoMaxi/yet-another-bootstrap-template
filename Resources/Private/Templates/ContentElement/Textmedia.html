@@ -7,12 +7,18 @@
     <div class="row">
       <f:if condition="{gallery.position.horizontal}==left">
         <f:then>
-          <f:render section="image" arguments="{files:files, rounded: rounded, ratio:ratio, thumbnail: thumbnail}" />
+          <f:render
+            section="image"
+            arguments="{files:files, rounded: rounded, ratio:ratio, thumbnail: thumbnail, id = data.uid}"
+          />
           <f:render section="text" arguments="{bodytext: data.bodytext}" />
         </f:then>
         <f:else>
           <f:render section="text" arguments="{bodytext: data.bodytext}" />
-          <f:render section="image" arguments="{files:files,rounded: rounded, ratio:ratio, thumbnail: thumbnail}" />
+          <f:render
+            section="image"
+            arguments="{files:files,rounded: rounded, ratio:ratio, thumbnail: thumbnail, id = data.uid}"
+          />
         </f:else>
       </f:if>
     </div>
@@ -26,8 +32,12 @@
 </f:section>
 <f:section name="image">
   <div class="col-4">
+    <f:variable name="gallery" value="{f:if(condition: '{files -> f:count()} > 1', then: 'gallery{id}')}" />
     <f:for each="{files}" as="item" iteration="i">
-      <f:render partial="Media/Image" arguments="{image:item,rounded: rounded, ratio:ratio, thumbnail: thumbnail}" />
+      <f:render
+        partial="Media/Image"
+        arguments="{image:item,rounded: rounded, ratio:ratio, thumbnail: thumbnail, gallery: gallery}"
+      />
     </f:for>
   </div>
 </f:section>
