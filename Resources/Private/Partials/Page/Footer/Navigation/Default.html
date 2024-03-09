@@ -1,0 +1,58 @@
+<footer class="py-3 container border-top">
+  <div class="d-flex flex-column flex-sm-row justify-content-between py-3 px-3 footer-pages">
+    <ul class="nav justify-content-center">
+      <f:for each="{menu}" as="page" iteration="i">
+        <li class="nav-item">
+          <f:link.typolink parameter="{page.link}" class="nav-link px-2">{page.title}</f:link.typolink>
+        </li>
+      </f:for>
+    </ul>
+    <ul class="list-unstyled d-flex footer-icons">
+      <f:if condition="{settings.socialmedia.twitter}">
+        <li class="ms-3">
+          <f:link.external class="link-body-emphasis" uri="{settings.socialmedia.twitter}" target="_blank">
+            <svg class="bi" width="24" height="24">
+              <use xlink:href="#twitter"></use>
+            </svg>
+          </f:link.external>
+        </li>
+      </f:if>
+      <f:if condition="{settings.socialmedia.instagram}">
+        <li class="ms-3">
+          <f:link.external class="link-body-emphasis" uri="{settings.socialmedia.instagram}">
+            <svg class="bi" width="24" height="24">
+              <use xlink:href="#instagram"></use>
+            </svg>
+          </f:link.external>
+        </li>
+      </f:if>
+      <f:if condition="{settings.socialmedia.facebook}">
+        <li class="ms-3">
+          <f:link.external class="link-body-emphasis" uri="{settings.socialmedia.facebook}">
+            <svg class="bi" width="24" height="24">
+              <use xlink:href="#facebook"></use>
+            </svg>
+          </f:link.external>
+        </li>
+      </f:if>
+      <f:if condition="{settings.socialmedia.discord}">
+        <li class="ms-3">
+          <f:link.external class="link-body-emphasis" uri="{settings.socialmedia.discord}">
+            <svg class="bi" width="24" height="24">
+              <use xlink:href="#discord"></use>
+            </svg>
+          </f:link.external>
+        </li>
+      </f:if>
+      <f:if condition="{settings.socialmedia.github}">
+        <li class="ms-3">
+          <f:link.external class="link-body-emphasis" uri="{settings.socialmedia.github}">
+            <svg class="bi" width="24" height="24">
+              <use xlink:href="#github"></use>
+            </svg>
+          </f:link.external>
+        </li>
+      </f:if>
+    </ul>
+  </div>
+</footer>

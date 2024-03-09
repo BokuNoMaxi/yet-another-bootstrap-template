@@ -10,9 +10,17 @@ page {
         includeSpacer = 1
         levels = 2
         as = mainmenu
-
       }
-      
+      # footer menu of website
+      20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+      20 {
+        special = directory
+        special.value = {$yabt.menu.footerPid}
+        includeSpacer = 1
+        levels = 1
+        as = footermenu
+      }
+
       100 = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor
       100 {
         as = languagenavigation

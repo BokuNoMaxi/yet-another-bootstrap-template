@@ -83,5 +83,16 @@ page {
         ifEmpty = default
       }
     }
+    settings {
+      socialmedia  {
+        facebook = {$yabt.socialmedia.facebook}
+        twitter = {$yabt.socialmedia.twitter}
+        linkedin = {$yabt.socialmedia.linkedin}
+        youtube = {$yabt.socialmedia.youtube}
+        instagram =  {$yabt.socialmedia.instagram}
+        github = {$yabt.socialmedia.github}
+        discord= {$yabt.socialmedia.discord}
+      }
+    }
   }
 }

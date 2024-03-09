@@ -1,0 +1,14 @@
+yabt {
+  menu {
+    footerPid =
+  }
+  socialmedia {
+    facebook =
+    twitter =
+    linkedin =
+    youtube =
+    instagram =
+    github =
+    discord=
+  }
+}
