@@ -2,11 +2,11 @@
   <f:spaceless>
     <f:render partial="SvgIcons" />
     <header class="sticky-top">
-      <f:render partial="Header/Navigation/Default" arguments="{site:site, menu:mainmenu}" />
+      <f:render partial="Navigation/Header/Default" arguments="{site:site, menu:mainMenu}" />
     </header>
     <!--TYPO3SEARCH_begin-->
     <f:render section="Main" />
     <!--TYPO3SEARCH_end-->
-    <f:render partial="Footer/Navigation/Default" arguments="{menu:footermenu}" />
+    <f:render partial="Navigation/Footer/Default" arguments="{menu:footerMenu}" />
   </f:spaceless>
 </html>

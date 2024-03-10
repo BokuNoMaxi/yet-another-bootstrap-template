@@ -9,7 +9,7 @@ page {
         expandAll = 1
         includeSpacer = 1
         levels = 2
-        as = mainmenu
+        as = mainMenu
       }
       # footer menu of website
       20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
@@ -18,7 +18,13 @@ page {
         special.value = {$yabt.menu.footerPid}
         includeSpacer = 1
         levels = 1
-        as = footermenu
+        as = footerMenu
+      }
+      # breadcrumbs
+      30 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+      30 {
+          as = breadcrumbMenu
+          special = rootline
       }
 
       100 = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor

@@ -1,0 +1,30 @@
+######################################
+#### BACKENDLAYOUT: SPECIAL START ####
+######################################
+mod {
+  web_layout {
+    BackendLayouts {
+      content_page {
+        title = Content Page
+        config {
+          backend_layout {
+            colCount = 3
+            rowCount = 1
+            rows {
+              1 {
+                columns {
+                  1 {
+                    name = Content
+                    colspan = 3
+                    colPos = 0
+                  }
+                }
+              }
+
+            }
+          }
+        }
+      }
+    }
+  }
+}
