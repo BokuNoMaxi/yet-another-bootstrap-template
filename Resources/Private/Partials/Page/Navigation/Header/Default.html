@@ -1,28 +1,30 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<nav class="navbar navbar-expand-lg">
-  <div class="container-fluid">
-      <f:link.page class="navbar-brand" pageUid="{site.configuration.rootPageId}">{site.configuration.websiteTitle}</f:link.page>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <f:for each="{menu}" as="menuitem" iteration="i">
-                  <f:if condition="{menuitem.children}">
-                      <f:then>
-                          <f:render section="menuitem-dropdown" arguments="{menuitem:menuitem}" />
-                      </f:then>
-                      <f:else>
-                          <f:render section="menuitem-single" arguments="{menuitem:menuitem}" />
-                      </f:else>
-                  </f:if>
-              </f:for>
-          </ul>
+<header class="sticky-top">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <f:link.page class="navbar-brand" pageUid="{site.configuration.rootPageId}">{site.configuration.websiteTitle}</f:link.page>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <f:for each="{menu}" as="menuitem" iteration="i">
+                    <f:if condition="{menuitem.children}">
+                        <f:then>
+                            <f:render section="menuitem-dropdown" arguments="{menuitem:menuitem}" />
+                        </f:then>
+                        <f:else>
+                            <f:render section="menuitem-single" arguments="{menuitem:menuitem}" />
+                        </f:else>
+                    </f:if>
+                </f:for>
+            </ul>
 
-          <f:render partial="Navigation/Header/Searchbar" />
-      </div>
-  </div>
+            <f:render partial="Navigation/Header/Searchbar" />
+        </div>
+    </div>
 </nav>
+</header>
 
 <f:section name="menuitem-single">
     <li class="nav-item">
