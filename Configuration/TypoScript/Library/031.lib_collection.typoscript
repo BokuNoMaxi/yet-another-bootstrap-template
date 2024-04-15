@@ -1,0 +1,22 @@
+#generate the image for the banner from the file reference of the page
+lib.bannerImage = FILES
+lib.bannerImage {
+   begin = 0
+   maxItems = 1
+
+   references {
+      table = pages
+      uid.data = page:uid
+      fieldName = media
+   }
+
+  renderObj = IMAGE
+  renderObj {
+    file {
+      import.data = file:current:uid
+      width = 1300
+      treatIdAsReference = 1
+    }
+  }
+
+}
