@@ -2,25 +2,57 @@
   <f:if condition="{ratio}">
     <f:then>
       <div class="{ratio}">
-        <f:render section="image" arguments="{_all}" />
+        <f:render section="container" arguments="{_all}" />
       </div>
     </f:then>
     <f:else>
-      <f:render section="image" arguments="{_all}" />
+      <f:render section="container" arguments="{_all}" />
     </f:else>
   </f:if>
 </html>
 
-<f:section name="image">
-  <div class="lightbox mb-3">
-    <a href="{f:uri.image(image: image)}" data-fancybox="{gallery}" data-caption="{image.title}">
-      <picture>
-        <source srcset="{f:uri.image(image: image, maxWidth: 250)}" media="(max-width: 479px)">
-        <source srcset="{f:uri.image(image: image, maxWidth: 512)}" media="(min-width: 480px) and (max-width: 767px)">
-        <source srcset="{f:uri.image(image: image, maxWidth: 646)}" media="(min-width: 768px) and (max-width: 991px)">
-        <source srcset="{f:uri.image(image: image, maxWidth: 780)}" media="(min-width: 1200px)">
-        <img src="{f:uri.image(image: image)}" class="img-fluid {rounded} {thumbnail}" alt="{image.alternative}"/>
-      </picture>
-    </a>
+<f:section name="container">
+  <f:if condition="{gallery.position.vertical} == intext">
+    <f:then>
+      <f:variable name="colspan" value="col-4" />
+      <f:render section="image" arguments="{_all}" />
+    </f:then>
+    <f:else>
+      <f:switch expression="{gallery.count.columns}">
+        <f:case value="1"><f:variable name="colspan" value="col-12" /></f:case>
+        <f:case value="2"><f:variable name="colspan" value="col-6" /></f:case>
+        <f:case value="3"><f:variable name="colspan" value="col-4" /></f:case>
+        <f:case value="4"><f:variable name="colspan" value="col-3" /></f:case>
+      </f:switch>
+      <f:switch expression="{gallery.position.horizontal}">
+        <f:case value="left"><f:variable name="class_position" value="text-start" /></f:case>
+        <f:case value="center"><f:variable name="class_position" value="text-center" /></f:case>
+        <f:case value="right"><f:variable name="class_position" value="text-end" /></f:case>
+      </f:switch>
+      <div class="row align-items-center {class_position}">
+        <f:render section="image" arguments="{_all}" />
+      </div>
+    </f:else>
+  </f:if>
+
+
   </div>
+</f:section>
+<f:section name="image">
+  <f:for each="{image.columns}" as="column" iteration="i">
+    <f:alias map="{image: column.media}">
+      <f:if condition="{image}">
+        <div class="lightbox mb-3 {colspan}">
+          <a href="{f:uri.image(image: image)}" data-fancybox="{galleryId}" data-caption="{image.title}">
+            <img
+              src="{f:uri.image(image: image)}"
+              class="img-fluid {rounded} {thumbnail}"
+              alt="{image.alternative}"
+              loading="{settings.media.lazyLoading}"
+            />
+          </a>
+        </div>
+      </f:if>
+    </f:alias>
+  </f:for>
 </f:section>
