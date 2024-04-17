@@ -4,34 +4,58 @@
     <f:variable name="thumbnail" value="{f:if(condition: '{data.thumbnail}', then: 'img-thumbnail')}" />
     <f:variable name="rounded" value="{f:if(condition: '{data.rounded}', then: 'rounded')}" />
     <f:variable name="ratio" value="{f:if(condition: '{data.ratio}', then: 'ratio {data.ratio}')}" />
-    <div class="row">
-      <f:if condition="{gallery.position.horizontal}==left">
-        <f:then>
-          <f:render
-            section="image"
-            arguments="{files:files, rounded: rounded, ratio:ratio, thumbnail: thumbnail, id = data.uid}"
-          />
-          <f:render section="text" arguments="{bodytext: data.bodytext}" />
-        </f:then>
-        <f:else>
-          <f:render section="text" arguments="{bodytext: data.bodytext}" />
-          <f:render
-            section="image"
-            arguments="{files:files,rounded: rounded, ratio:ratio, thumbnail: thumbnail, id = data.uid}"
-          />
-        </f:else>
-      </f:if>
-    </div>
+
+    <f:switch expression="{gallery.position.vertical}">
+      <f:case value="intext">
+        <div class="row">
+          <f:if condition="{gallery.position.horizontal}==left">
+            <f:then>
+              <f:render
+                section="image"
+                arguments="{files:files, rounded: rounded, ratio:ratio, thumbnail: thumbnail, id = data.uid, colspan: 'col-4'}"
+              />
+              <f:render section="text" arguments="{bodytext: data.bodytext, colspan: 'col-8'}" />
+            </f:then>
+            <f:else>
+              <f:render section="text" arguments="{bodytext: data.bodytext, colspan: 'col-8'}" />
+              <f:render
+                section="image"
+                arguments="{files:files,rounded: rounded, ratio:ratio, thumbnail: thumbnail, id = data.uid, colspan: 'col-4'}"
+              />
+            </f:else>
+          </f:if>
+        </div>
+      </f:case>
+      <f:case value="below">
+        <f:render section="text" arguments="{bodytext: data.bodytext, colspan: 'col-12'}" />
+        <f:render
+          section="image"
+          arguments="{files:files,rounded: rounded, ratio:ratio, thumbnail: thumbnail, id = data.uid, colspan: 'col-12 mt-5', position: gallery.position.horizontal}"
+        />
+      </f:case>
+      <f:defaultCase>
+        <f:render
+          section="image"
+          arguments="{files:files,rounded: rounded, ratio:ratio, thumbnail: thumbnail, id = data.uid, colspan: 'col-12 my-4', position: gallery.position.horizontal}"
+        />
+        <f:render section="text" arguments="{bodytext: data.bodytext, colspan: 'col-12'}" />
+      </f:defaultCase>
+    </f:switch>
   </f:section>
 </html>
 
 <f:section name="text">
-  <div class="col">
+  <div class="{colspan}">
     <f:format.html>{bodytext}</f:format.html>
   </div>
 </f:section>
 <f:section name="image">
-  <div class="col-4">
+  <f:switch expression="{position}">
+    <f:case value="left"><f:variable name="class_position" value="text-start" /></f:case>
+    <f:case value="center"><f:variable name="class_position" value="text-center" /></f:case>
+    <f:case value="right"><f:variable name="class_position" value="text-end" /></f:case>
+  </f:switch>
+  <div class="{colspan} {class_position}">
     <f:variable name="gallery" value="{f:if(condition: '{files -> f:count()} > 1', then: 'gallery{id}')}" />
     <f:for each="{files}" as="item" iteration="i">
       <f:render

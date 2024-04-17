@@ -1,0 +1,8 @@
+TCEFORM {
+  tt_content {
+    imageorient {
+      #in text left/right
+      removeItems = 17,18
+    }
+  }
+}
