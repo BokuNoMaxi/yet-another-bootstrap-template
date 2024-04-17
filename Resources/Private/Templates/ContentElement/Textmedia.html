@@ -53,6 +53,7 @@
     <f:format.html>{bodytext}</f:format.html>
   </div>
 </f:section>
+
 <f:section name="image">
   <f:variable name="galleryId" value="{f:if(condition: '{gallery.count.files} > 1', then: 'gallery{id}')}" />
   <f:for each="{gallery.rows}" as="item" iteration="i">
