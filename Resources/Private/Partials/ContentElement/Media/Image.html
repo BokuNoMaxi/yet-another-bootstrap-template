@@ -14,15 +14,15 @@
 <f:section name="container">
   <f:if condition="{gallery.position.vertical} == intext">
     <f:then>
-      <f:variable name="colspan" value="col-4" />
+      <f:variable name="colspan" value="col-12 col-md-4" />
       <f:render section="image" arguments="{_all}" />
     </f:then>
     <f:else>
       <f:switch expression="{gallery.count.columns}">
         <f:case value="1"><f:variable name="colspan" value="col-12" /></f:case>
-        <f:case value="2"><f:variable name="colspan" value="col-6" /></f:case>
-        <f:case value="3"><f:variable name="colspan" value="col-4" /></f:case>
-        <f:case value="4"><f:variable name="colspan" value="col-3" /></f:case>
+        <f:case value="2"><f:variable name="colspan" value="col-12 col-md-6" /></f:case>
+        <f:case value="3"><f:variable name="colspan" value="col-12 col-md-4" /></f:case>
+        <f:case value="4"><f:variable name="colspan" value="col-12 col-md-3" /></f:case>
       </f:switch>
       <f:switch expression="{gallery.position.horizontal}">
         <f:case value="left"><f:variable name="class_position" value="text-start" /></f:case>

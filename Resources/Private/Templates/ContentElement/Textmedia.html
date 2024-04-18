@@ -14,10 +14,10 @@
                 section="image"
                 arguments="{gallery:gallery, rounded: rounded, ratio:ratio, thumbnail: thumbnail, id = data.uid}"
               />
-              <f:render section="text" arguments="{bodytext: data.bodytext, colspan: 'col-8'}" />
+              <f:render section="text" arguments="{bodytext: data.bodytext, colspan: 'col-12 col-md-8'}" />
             </f:then>
             <f:else>
-              <f:render section="text" arguments="{bodytext: data.bodytext, colspan: 'col-8'}" />
+              <f:render section="text" arguments="{bodytext: data.bodytext, colspan: 'col-12 col-md-8'}" />
               <f:render
                 section="image"
                 arguments="{gallery:gallery, rounded: rounded, ratio:ratio, thumbnail: thumbnail, id = data.uid}"
