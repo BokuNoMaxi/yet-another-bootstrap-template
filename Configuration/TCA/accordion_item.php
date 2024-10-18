@@ -96,9 +96,9 @@ return [
         "renderType" => "selectSingle",
         "items" => [
           [
-            "label" => $lll."type.default",
-            "value" => "0",
-            "icon" => "content-textmedia",
+            'label' => $lll."type.default",
+            'value' => "0",
+            'icon' => "content-textmedia",
           ],
         ],
       ],
@@ -111,7 +111,7 @@ return [
         "type" => "check",
         "items" => [
           "1" => [
-            "label" =>
+            'label' =>
               "LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:hidden.I.0",
           ],
         ],
@@ -121,9 +121,7 @@ return [
       "exclude" => true,
       "label" => "LLL:" . $generalLanguageFile . ":LGL.starttime",
       "config" => [
-        "type" => "input",
-        "renderType" => "inputDateTime",
-        "eval" => "datetime",
+        "type" => 'datetime',
         "default" => 0,
       ],
       "l10n_mode" => "exclude",
@@ -133,9 +131,7 @@ return [
       "exclude" => true,
       "label" => "LLL:" . $generalLanguageFile . ":LGL.endtime",
       "config" => [
-        "type" => "input",
-        "renderType" => "inputDateTime",
-        "eval" => "datetime",
+        "type" => 'datetime',
         "default" => 0,
         "range" => [
           "upper" => mktime(0, 0, 0, 1, 1, 2038),
@@ -155,7 +151,7 @@ return [
       "config" => [
         "type" => "select",
         "renderType" => "selectSingle",
-        "items" => [["label" => "", "value" => 0]],
+        "items" => [['label' => "", 'value' => 0]],
         "foreign_table" => "accordion_item",
         "foreign_table_where" =>
           "AND accordion_item.pid=###CURRENT_PID###",
@@ -185,9 +181,9 @@ return [
         "type" => "select",
         "renderType" => "selectSingle",
         "items" => [
-          ["label" => "H2", "value" => "2"],
-          ["label" => "H3", "value" => "3"],
-          ["label" => "H4", "value" => "4"],
+          ['label' => "H2", 'value' => "2"],
+          ['label' => "H3", 'value' => "3"],
+          ['label' => "H4", 'value' => "4"],
         ],
         "default" => "2",
       ],
@@ -201,20 +197,20 @@ return [
         "renderType" => "selectSingle",
         "items" => [
           [
-            "label" => $lll."header_position.default",
-            "value" => "",
+            'label' => $lll."header_position.default",
+            'value' => "",
           ],
           [
-            "label" => $lll."header_position.center",
-            "value" => "center",
+            'label' => $lll."header_position.center",
+            'value' => "center",
           ],
           [
-            "label" => $lll."header_position.right",
-            "value" => "right",
+            'label' => $lll."header_position.right",
+            'value' => "right",
           ],
           [
-            "label" => $lll."header_position.left",
-            "value" => "left",
+            'label' => $lll."header_position.left",
+            'value' => "left",
           ],
         ],
         "default" => "",

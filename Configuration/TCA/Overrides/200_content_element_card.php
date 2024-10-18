@@ -1,11 +1,13 @@
 <?php
 
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 /*
  * For the full copyright and license information, please read the
  * LICENSE file that was distributed with this source code.
  */
 
-defined("TYPO3") or die("Access denied.");
+defined("TYPO3") || die("Access denied.");
 
 // Add Content Element
 if (!is_array($GLOBALS["TCA"]["tt_content"]["types"]["card"] ?? false)) {
@@ -13,14 +15,14 @@ if (!is_array($GLOBALS["TCA"]["tt_content"]["types"]["card"] ?? false)) {
 }
 
 // Add content element PageTSConfig
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
+ExtensionManagementUtility::registerPageTSConfigFile(
   "yet_another_bootstrap_template",
   "Configuration/TsConfig/Page/ContentElement/Element/Card.tsconfig",
   "card"
 );
 
 // Add content element to selector list
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
+ExtensionManagementUtility::addTcaSelectItem(
   "tt_content",
   "CType",
   ["Card", "card", "card-group", "Bootstrap5"]

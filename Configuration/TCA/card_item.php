@@ -113,7 +113,7 @@ return [
         "type" => "check",
         "items" => [
           "1" => [
-            "label" =>
+            'label' =>
               "LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:hidden.I.0",
           ],
         ],
@@ -123,9 +123,7 @@ return [
       "exclude" => true,
       "label" => "LLL:" . $generalLanguageFile . ":LGL.starttime",
       "config" => [
-        "type" => "input",
-        "renderType" => "inputDateTime",
-        "eval" => "datetime",
+        "type" => 'datetime',
         "default" => 0,
       ],
       "l10n_mode" => "exclude",
@@ -135,9 +133,7 @@ return [
       "exclude" => true,
       "label" => "LLL:" . $generalLanguageFile . ":LGL.endtime",
       "config" => [
-        "type" => "input",
-        "renderType" => "inputDateTime",
-        "eval" => "datetime",
+        "type" => 'datetime',
         "default" => 0,
         "range" => [
           "upper" => mktime(0, 0, 0, 1, 1, 2038),
@@ -157,7 +153,7 @@ return [
       "config" => [
         "type" => "select",
         "renderType" => "selectSingle",
-        "items" => [["label" => "", "value" => 0]],
+        "items" => [['label' => "", 'value' => 0]],
         "foreign_table" => "card_item",
         "foreign_table_where" =>
           "AND card_item.pid=###CURRENT_PID###",
@@ -187,9 +183,9 @@ return [
         "type" => "select",
         "renderType" => "selectSingle",
         "items" => [
-          ["label" => "H2", "value" => "2"],
-          ["label" => "H3", "value" => "3"],
-          ["label" => "H4", "value" => "4"],
+          ['label' => "H2", 'value' => "2"],
+          ['label' => "H3", 'value' => "3"],
+          ['label' => "H4", 'value' => "4"],
         ],
         "default" => "2",
       ],
@@ -203,20 +199,20 @@ return [
         "renderType" => "selectSingle",
         "items" => [
           [
-            "label" => $lll.":header_position.default",
-            "value" => "",
+            'label' => $lll.":header_position.default",
+            'value' => "",
           ],
           [
-            "label" => $lll.":header_position.center",
-            "value" => "center",
+            'label' => $lll.":header_position.center",
+            'value' => "center",
           ],
           [
-            "label" => $lll.":header_position.right",
-            "value" => "right",
+            'label' => $lll.":header_position.right",
+            'value' => "right",
           ],
           [
-            "label" => $lll.":header_position.left",
-            "value" => "left",
+            'label' => $lll.":header_position.left",
+            'value' => "left",
           ],
         ],
         "default" => "",
@@ -248,20 +244,8 @@ return [
       "exclude" => 1,
       "label" => $lll."link",
       "config" => [
-        "type" => "input",
-        "renderType" => "inputLink",
+        "type" => 'link',
         "size" => 50,
-        "max" => 1024,
-        "eval" => "trim",
-        "fieldControl" => [
-          "linkPopup" => [
-            "options" => [
-              "title" =>
-                 $lll.":link",
-            ],
-          ],
-        ],
-        "softref" => "typolink",
       ],
     ],
 
@@ -328,15 +312,15 @@ return [
           "type" => "select",
           "renderType" => "selectSingle",
           "items" => [
-              ["label" => $lll."color.none", "value" => ""],
-              ["label" => $lll."color.primary", "value" => "bg-primary"],
-              ["label" => $lll."color.secondary", "value" => "bg-secondary"],
-              ["label" => $lll."color.success", "value" => "bg-success"],
-              ["label" => $lll."color.danger", "value" => "bg-danger"],
-              ["label" => $lll."color.warning", "value" => "bg-warning"],
-              ["label" => $lll."color.info", "value" => "bg-info"],
-              ["label" => $lll."color.light", "value" => "bg-light"],
-              ["label" => $lll."color.dark", "value" => "bg-dark"],
+              ['label' => $lll."color.none", 'value' => ""],
+              ['label' => $lll."color.primary", 'value' => "bg-primary"],
+              ['label' => $lll."color.secondary", 'value' => "bg-secondary"],
+              ['label' => $lll."color.success", 'value' => "bg-success"],
+              ['label' => $lll."color.danger", 'value' => "bg-danger"],
+              ['label' => $lll."color.warning", 'value' => "bg-warning"],
+              ['label' => $lll."color.info", 'value' => "bg-info"],
+              ['label' => $lll."color.light", 'value' => "bg-light"],
+              ['label' => $lll."color.dark", 'value' => "bg-dark"],
           ],
       ],
     ],
@@ -347,15 +331,15 @@ return [
           "type" => "select",
           "renderType" => "selectSingle",
           "items" => [
-              ["label" => $lll."color.none", "value" => ""],
-              ["label" => $lll."color.primary", "value" => "border-primary"],
-              ["label" => $lll."color.secondary", "value" => "border-secondary"],
-              ["label" => $lll."color.success", "value" => "border-success"],
-              ["label" => $lll."color.danger", "value" => "border-danger"],
-              ["label" => $lll."color.warning", "value" => "border-warning"],
-              ["label" => $lll."color.info", "value" => "border-info"],
-              ["label" => $lll."color.light", "value" => "border-light"],
-              ["label" => $lll."color.dark", "value" => "border-dark"],
+              ['label' => $lll."color.none", 'value' => ""],
+              ['label' => $lll."color.primary", 'value' => "border-primary"],
+              ['label' => $lll."color.secondary", 'value' => "border-secondary"],
+              ['label' => $lll."color.success", 'value' => "border-success"],
+              ['label' => $lll."color.danger", 'value' => "border-danger"],
+              ['label' => $lll."color.warning", 'value' => "border-warning"],
+              ['label' => $lll."color.info", 'value' => "border-info"],
+              ['label' => $lll."color.light", 'value' => "border-light"],
+              ['label' => $lll."color.dark", 'value' => "border-dark"],
           ],
       ],
     ],
@@ -365,12 +349,12 @@ return [
       "config" => [
           "type" => "check",
           "items" => [
-              ["label" => $lll."template.card_header", "1"]
+              ['label' => $lll."template.card_header", "1"]
           ],
       ],
     ],
     "card_footer" => [
-      "label" =>"$lll.footer",
+      "label" =>$lll . '.footer',
       "config" => [
         "type" => "text",
         "cols" => "80",

@@ -1,9 +1,11 @@
 <?php
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 defined("TYPO3") || die();
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages(
+ExtensionManagementUtility::allowTableOnStandardPages(
   "accordion_item"
 );
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages(
+ExtensionManagementUtility::allowTableOnStandardPages(
   "card_item"
 );

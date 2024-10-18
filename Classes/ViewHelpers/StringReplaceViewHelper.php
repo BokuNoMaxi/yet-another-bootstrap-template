@@ -2,9 +2,10 @@
 
 namespace BokuNo\YABT\ViewHelpers;
 
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 
-class StringReplaceViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper
+class StringReplaceViewHelper extends AbstractViewHelper
 {
   /**
    * @return void

@@ -1,7 +1,9 @@
 <?php
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 defined("TYPO3") || die();
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
+ExtensionManagementUtility::addStaticFile(
   "yet_another_bootstrap_template",
   "Configuration/TypoScript",
   "Yet another bootstrap template"
