@@ -1,14 +1,14 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-  <f:if condition="{ratio}">
-    <f:then>
-      <div class="{ratio}">
-        <f:render section="container" arguments="{_all}" />
-      </div>
-    </f:then>
-    <f:else>
+<f:if condition="{ratio}">
+  <f:then>
+    <div class="{ratio}">
       <f:render section="container" arguments="{_all}" />
-    </f:else>
-  </f:if>
+    </div>
+  </f:then>
+  <f:else>
+    <f:render section="container" arguments="{_all}" />
+  </f:else>
+</f:if>
 </html>
 
 <f:section name="container">
@@ -19,15 +19,29 @@
     </f:then>
     <f:else>
       <f:switch expression="{gallery.count.columns}">
-        <f:case value="1"><f:variable name="colspan" value="col-12" /></f:case>
-        <f:case value="2"><f:variable name="colspan" value="col-12 col-md-6" /></f:case>
-        <f:case value="3"><f:variable name="colspan" value="col-12 col-md-4" /></f:case>
-        <f:case value="4"><f:variable name="colspan" value="col-12 col-md-3" /></f:case>
+        <f:case value="1">
+          <f:variable name="colspan" value="col-12" />
+        </f:case>
+        <f:case value="2">
+          <f:variable name="colspan" value="col-12 col-md-6" />
+        </f:case>
+        <f:case value="3">
+          <f:variable name="colspan" value="col-12 col-md-4" />
+        </f:case>
+        <f:case value="4">
+          <f:variable name="colspan" value="col-12 col-md-3" />
+        </f:case>
       </f:switch>
       <f:switch expression="{gallery.position.horizontal}">
-        <f:case value="left"><f:variable name="class_position" value="text-start" /></f:case>
-        <f:case value="center"><f:variable name="class_position" value="text-center" /></f:case>
-        <f:case value="right"><f:variable name="class_position" value="text-end" /></f:case>
+        <f:case value="left">
+          <f:variable name="class_position" value="text-start" />
+        </f:case>
+        <f:case value="center">
+          <f:variable name="class_position" value="text-center" />
+        </f:case>
+        <f:case value="right">
+          <f:variable name="class_position" value="text-end" />
+        </f:case>
       </f:switch>
       <div class="row align-items-center {class_position}">
         <f:render section="image" arguments="{_all}" />
@@ -36,20 +50,23 @@
   </f:if>
 </f:section>
 <f:section name="image">
-  <f:for each="{image.columns}" as="column" iteration="i">
-    <f:alias map="{image: column.media}">
-      <f:if condition="{image}">
-        <div class="lightbox mb-3 {colspan}">
-          <a href="{f:uri.image(image: image)}" data-fancybox="{galleryId}" data-caption="{image.title}">
-            <img
-              src="{f:uri.image(image: image)}"
-              class="img-fluid {rounded} {thumbnail}"
-              alt="{image.alternative}"
-              loading="{settings.media.lazyLoading}"
-            />
-          </a>
-        </div>
-      </f:if>
-    </f:alias>
-  </f:for>
+  <div class="sidebar {colspan} mb-3">
+    <div class="lightbox">
+      <f:for each="{image.columns}" as="column" iteration="i">
+        <f:alias map="{image: column.media}">
+          <f:if condition="{image}">
+            <a href="{f:uri.image(image: image)}" data-fancybox="{galleryId}" data-caption="{image.title}">
+              <img
+                src="{f:uri.image(image: image)}"
+                class="img-fluid {rounded} {thumbnail}"
+                alt="{image.alternative}"
+                loading="{settings.media.lazyLoading}"
+              />
+            </a>
+          </f:if>
+        </f:alias>
+      </f:for>
+    </div>
+  </div>
+
 </f:section>
