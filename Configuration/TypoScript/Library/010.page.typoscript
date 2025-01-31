@@ -22,6 +22,67 @@ page {
     viewport = width=device-width, initial-scale=1
     robots = index,follow
   }
+  shortcutIcon = {$yabt.favicon}
+  headerData {
+    1 = TEXT
+    1{
+      stdWrap.dataWrap = <link rel="icon" type="image/png" sizes="16x16" href="|">
+      data = path: {$yabt.favicon16}
+      if.isTrue.data = path: {$yabt.favicon16}
+    }
+    2 = TEXT
+    2 {
+      stdWrap.dataWrap = <link rel="icon" type="image/png" sizes="32x32" href="|">
+      data = path: {$yabt.favicon32}
+      if.isTrue.data = path: {$yabt.favicon32}
+    }
+    3 = TEXT
+    3 {
+      stdWrap.dataWrap = <link rel="icon" type="image/png" sizes="48x48" href="|">
+      data = path: {$yabt.favicon48}
+      if.isTrue.data = path: {$yabt.favicon48}
+    }
+    10 = TEXT
+    10 {
+      stdWrap.dataWrap = <link rel="icon" type="image/svg+xml" href="|">
+      data = path: {$yabt.faviconSVG}
+      if.isTrue.data = path: {$yabt.faviconSVG}
+    }
+    4 = TEXT
+    4 {
+      stdWrap.dataWrap = <link rel="apple-touch-icon"sizes="180x180" href="|">
+      data = path: {$yabt.appletouchicon}
+      if.isTrue.data = path: {$yabt.appletouchicon}
+    }
+    5 = TEXT
+    5 {
+      stdWrap.dataWrap = <link rel="manifest" href="|">
+      data = path: {$yabt.manifest}
+      if.isTrue.data = path: {$yabt.manifest}
+    }
+    6 = TEXT
+    6 {
+      stdWrap.dataWrap = <link rel="mask-icon" href="|" color="{$guglertheme.safari.color}">
+      data = path: {$yabt.safari.pinnedtab}
+      if.isTrue.data = path: {$yabt.safari.pinnedtab}
+    }
+    7 = TEXT
+    7 {
+      stdWrap.dataWrap = <meta name="theme-color" content="{$yabt.safari.color}">
+      if.isTrue.dataWrap = {$yabt.safari.color}
+    }
+    8 = TEXT
+    8 {
+      stdWrap.dataWrap = <meta name="msapplication-TileColor" content="{$yabt.safari.color}">
+      if.isTrue.dataWrap = {$yabt.safari.color}
+    }
+    9 = TEXT
+    9 {
+      stdWrap.dataWrap = <meta name="apple-mobile-web-app-title" content="{$yabt.app-title}" />
+      if.isTrue.dataWrap = {$yabt.app-title}
+    }
+  }
+
   bodyTag >
   bodyTagCObject >
   bodyTagCObject = COA
